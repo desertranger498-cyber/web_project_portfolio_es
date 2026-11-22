@@ -1,0 +1,156 @@
+body,
+ul,
+h1,
+h2,
+label,
+input,
+button,
+footer,
+div,
+p {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+}
+
+a,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "ArchivoBlack";
+  src: url(../fonts/ArchivoBlack-Regular.woff);
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url(../fonts/OpenSans-Regular.woff);
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url(../fonts/OpenSans-Bold.woff);
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url(../fonts/OpenSans-SemiBold.woff);
+  font-style: normal;
+  font-weight: 600;
+}
+
+body {
+  width: 100%;
+  height: 1998px;
+  background-color: #111111;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.data__container {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  margin: 40px auto 0px;
+  width: calc(100% - 240px);
+  min-width: 1200px;
+  height: 500px;
+  display: grid;
+  grid-template-columns: minmax(auto, 1fr) 387px;
+  grid-template-areas:
+    "data__name     data__picture__image"
+    "data__tools    data__picture__image"
+    "data__text     data__picture__image"
+    "data__links    data__picture__image";
+  grid-template-rows:
+    minmax(156px, 205px)
+    minmax(25px, 40px)
+    minmax(150px, 180px)
+    minmax(35px, 65px);
+  column-gap: 20px;
+}
+
+.data__name {
+  margin-top: 49px;
+  grid-area: data__name;
+  font-family: "ArchivoBlack";
+  font-size: 72px;
+}
+
+.data__picture__image {
+  grid-area: data__picture__image;
+  height: 500px;
+  object-fit: cover;
+}
+
+.data__tools {
+  font-family: "OpenSans";
+  grid-area: data__tools;
+  margin-top: 15px;
+  align-content: center;
+  color: #ffffff;
+  opacity: 50%;
+}
+
+.data__text {
+  grid-area: data__text;
+  margin-top: 30px;
+  font-family: "OpenSans";
+  line-height: 1.4;
+}
+
+.data__links {
+  grid-area: data__links;
+  font-family: "OpenSans";
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+.links__socials {
+  width: 402px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  row-gap: 5px;
+  justify-content: space-between;
+}
+
+.flex__endl {
+  flex-basis: 100%;
+  height: 0;
+}
+
+.grandient__bar {
+  background: #6d6dff;
+  background: linear-gradient(
+    270deg,
+    rgba(109, 109, 255, 1) 0%,
+    rgba(76, 26, 151, 1) 100%
+  );
+  height: 5px;
+}
+
+.grandient1 {
+  width: 115px;
+  margin-top: 2px;
+}
+
+.grandient2 {
+  width: 138px;
+  margin-top: 2px;
+}
+
+.grandient3 {
+  width: 88px;
+  margin-top: 2px;
+}
