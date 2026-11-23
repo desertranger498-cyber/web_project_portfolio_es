@@ -122,9 +122,8 @@ body {
 }
 
 .links__socials {
-  width: 402px;
   display: flex;
-  justify-content: space-between;
+  column-gap: 30px;
 }
 
 .grandient__bar {
@@ -236,7 +235,7 @@ body {
 }
 
 .project__name {
-  font-style: bold;
+  font-style: normal;
   font-weight: 700;
   font-size: 24px;
 }
@@ -341,4 +340,73 @@ body::before {
   filter: blur(24px);
 
   pointer-events: none;
+}
+
+/* media queries */
+@media screen and (max-width: 1023px) {
+  body {
+    width: calc(100% - 80px);
+  }
+
+  .data__text {
+    margin-top: 20px;
+  }
+
+  .data__links {
+    margin-top: 20px;
+  }
+
+  .content {
+    margin-top: 70px;
+  }
+
+  .tools__menu {
+    margin-top: 36px;
+    gap: 78px;
+  }
+
+  .highlight__projects {
+    margin-top: 80px;
+  }
+
+  .project__containers {
+    margin-top: 30px;
+    gap: 20px;
+  }
+
+  .project__picture {
+    max-width: 100%;
+    aspect-ratio: 673 / 330;
+  }
+
+  .project__coffeeshop {
+    max-width: 688px;
+  }
+
+  .project__links-description {
+  }
+
+  .project__description {
+    line-height: 1.4;
+  }
+
+  .project__links-description {
+    margin-top: 10px;
+  }
+
+  .project__text-area {
+    min-height: 0px;
+  }
+
+  .contacting {
+    margin: 0px auto 0;
+  }
+
+  .content,
+  .footer {
+    margin-top: 80px;
+  }
+}
+
+@media screen and (max-width: 767px) {
 }
