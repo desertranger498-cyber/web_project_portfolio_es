@@ -50,7 +50,6 @@ li {
 }
 
 body {
-  width: 100%;
   height: 1998px;
   background-color: #111111;
   color: #ffffff;
@@ -58,25 +57,26 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
+  width: calc(100% - 240px);
+  margin: 40px auto 0px;
+  position: relative;
+  overflow-x: clip;
 }
 
 .data__container {
-  margin: 40px auto 0px;
-  width: calc(100% - 240px);
-  min-width: 1200px;
-  height: 500px;
+  min-height: 500px;
   display: grid;
-  grid-template-columns: minmax(auto, 1fr) 387px;
+  grid-template-columns: minmax(auto, 1fr) minmax(0, 387px);
   grid-template-areas:
     "data__name     data__picture__image"
     "data__tools    data__picture__image"
     "data__text     data__picture__image"
     "data__links    data__picture__image";
   grid-template-rows:
-    minmax(156px, 205px)
-    minmax(25px, 40px)
-    minmax(150px, 180px)
-    minmax(35px, 65px);
+    minmax(156px, auto)
+    minmax(25px, auto)
+    minmax(150px, auto)
+    minmax(35px, auto);
   column-gap: 20px;
 }
 
@@ -89,8 +89,10 @@ body {
 
 .data__picture__image {
   grid-area: data__picture__image;
-  height: 500px;
+  width: 100%;
   object-fit: cover;
+  max-height: 500px;
+  aspect-ratio: 387/500;
 }
 
 .data__tools {
@@ -112,11 +114,11 @@ body {
 .data__links {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   grid-area: data__links;
   font-family: "OpenSans";
   font-weight: 600;
-  margin-top: 30px;
+  margin-top: auto;
+  margin-bottom: 10px;
 }
 
 .links__socials {
@@ -139,6 +141,7 @@ body {
   width: 402px;
   display: flex;
   justify-content: space-between;
+  margin-top: 8px;
 }
 
 .grandient1 {
@@ -151,4 +154,191 @@ body {
 
 .grandient3 {
   width: 88px;
+}
+
+/* end of Header user data */
+/* Start of "content" second block */
+
+.content,
+.footer {
+  margin-top: 100px;
+  font-family: "ArchivoBlack";
+  font-size: 40px;
+}
+
+.content__display {
+  display: flex;
+  flex-direction: column;
+}
+
+.content__title {
+  height: 44px;
+}
+
+.tools__menu {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo__tools {
+  height: 50px;
+}
+
+.highlight__projects {
+  margin-top: 100px;
+  height: auto;
+  width: 100%;
+}
+
+.project__containers {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  flex-wrap: wrap;
+  font-family: OpenSans;
+  line-height: 1;
+  justify-content: center;
+  width: 100%;
+}
+
+.project__coffeeshop {
+  max-width: 590px;
+  max-height: 670px;
+  min-width: 0;
+}
+
+.project__picture {
+  max-width: 590px;
+  min-width: 0;
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 590/330;
+}
+
+.project__js-imagefit {
+  object-fit: cover;
+}
+
+.project__text-area {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  padding: 30px 30px 30px 30px;
+  min-height: 340px;
+  line-height: 1.4;
+  gap: 20px;
+  background-color: #1c1c1c;
+}
+
+.project__name {
+  font-style: bold;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.project__description {
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.link__github-webpage {
+  height: 22px;
+  width: 83px;
+}
+
+.live__demo {
+  height: 22px;
+  width: 132px;
+}
+
+.project__links-description {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: auto;
+}
+
+/* end of content user projects */
+/* Start of "footer" last block */
+
+.contacting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+  max-width: 336px;
+  margin: 100px auto 0;
+  height: auto;
+
+  position: relative;
+}
+
+.tripleten__link {
+  font-family: "OpenSans";
+  font-size: 18px;
+  color: #6d6dff;
+}
+
+.social__media-displayer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 25px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* codigo que me dio la IA de los circulos*/
+
+.contacting::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  width: 800px;
+  height: 800px;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(
+    ellipse at center,
+    rgba(91, 75, 255, 0.3) 0%,
+    rgba(91, 75, 255, 0.15) 45%,
+    transparent 75%
+  );
+
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  width: 550px;
+  height: 1000px;
+
+  top: 15%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(
+    circle at center,
+    rgba(91, 75, 255, 0.15) 0%,
+    rgba(91, 75, 255, 0.15) 45%,
+    transparent 75%
+  );
+
+  filter: blur(24px);
+
+  pointer-events: none;
 }
