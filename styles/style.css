@@ -343,6 +343,7 @@ body::before {
 /* media queries -------------------------------------*/
 @media screen and (max-width: 1023px) {
   .data__container {
+    min-height: 0;
     grid-template-columns: minmax(auto, 1fr) minmax(0, 216px);
     grid-template-rows:
       minmax(0px, auto) minmax(0px, auto) minmax(0px, auto)
@@ -353,6 +354,10 @@ body::before {
     margin-top: 0px;
     font-size: 58px;
     line-height: 1.1;
+  }
+
+  .tools__menu {
+    flex-wrap: wrap;
   }
 
   .data__tools {
@@ -437,7 +442,7 @@ body::before {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 650px) {
   body {
     width: calc(100% - 40px);
     margin-top: 20px;
@@ -597,7 +602,7 @@ body::before {
   }
 
   .contacting {
-    margin: 0px 32px 0;
+    margin: 0px auto 0;
     padding-bottom: 200px;
   }
 
