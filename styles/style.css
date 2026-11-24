@@ -23,6 +23,10 @@ li {
   text-decoration: none;
 }
 
+img {
+  display: block;
+}
+
 @font-face {
   font-family: "ArchivoBlack";
   src: url(../fonts/ArchivoBlack-Regular.woff);
@@ -50,7 +54,6 @@ li {
 }
 
 body {
-  height: 1998px;
   background-color: #111111;
   color: #ffffff;
   line-height: 1;
@@ -170,10 +173,6 @@ body {
   flex-direction: column;
 }
 
-.content__title {
-  height: 44px;
-}
-
 .tools__menu {
   margin-top: 50px;
   display: flex;
@@ -206,13 +205,12 @@ body {
 
 .project__coffeeshop {
   max-width: 590px;
-  max-height: 670px;
   min-width: 0;
 }
 
 .project__picture {
   max-width: 590px;
-  min-width: 0;
+  min-width: 0px;
   width: 100%;
   object-fit: cover;
   aspect-ratio: 590/330;
@@ -342,10 +340,33 @@ body::before {
   pointer-events: none;
 }
 
-/* media queries */
+/* media queries -------------------------------------*/
 @media screen and (max-width: 1023px) {
+  .data__container {
+    grid-template-columns: minmax(auto, 1fr) minmax(0, 216px);
+    grid-template-rows:
+      minmax(0px, auto) minmax(0px, auto) minmax(0px, auto)
+      minmax(0px, auto);
+  }
+
+  .data__name {
+    margin-top: 0px;
+    font-size: 58px;
+    line-height: 1.1;
+  }
+
+  .data__tools {
+    margin-top: 14px;
+    line-height: 1.4;
+  }
+
+  .data__picture__image {
+    aspect-ratio: 216 / 280;
+  }
+
   body {
     width: calc(100% - 80px);
+    overflow-x: clip;
   }
 
   .data__text {
@@ -353,7 +374,12 @@ body::before {
   }
 
   .data__links {
-    margin-top: 20px;
+    margin-top: 23px;
+    margin-bottom: 0px;
+  }
+
+  .grandient__socials {
+    margin-top: 8px;
   }
 
   .content {
@@ -361,8 +387,9 @@ body::before {
   }
 
   .tools__menu {
-    margin-top: 36px;
+    margin-top: 40px;
     gap: 78px;
+    justify-content: flex-start;
   }
 
   .highlight__projects {
@@ -376,14 +403,16 @@ body::before {
 
   .project__picture {
     max-width: 100%;
-    aspect-ratio: 673 / 330;
+    aspect-ratio: 688 / 330;
   }
 
   .project__coffeeshop {
     max-width: 688px;
   }
 
-  .project__links-description {
+  .project__javascript {
+    max-width: 688px;
+    min-width: 0px;
   }
 
   .project__description {
@@ -409,4 +438,213 @@ body::before {
 }
 
 @media screen and (max-width: 767px) {
+  body {
+    width: calc(100% - 40px);
+    margin-top: 20px;
+    overflow-x: clip;
+  }
+
+  .data__container {
+    display: block;
+  }
+
+  .data__picture__image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    max-height: none;
+  }
+
+  .tools__menu {
+    margin-top: 36px;
+    gap: 53px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .data__name-text {
+    font-size: 36px;
+    line-height: 1.09;
+  }
+
+  .data__name {
+    margin-top: 30px;
+  }
+
+  .data__tools {
+    font-size: 16px;
+    align-content: flex-start;
+    margin-top: 10px;
+    line-height: 1.35;
+  }
+
+  .data__links {
+    margin-top: 33px;
+  }
+
+  .data__text {
+    line-height: 1.38;
+    font-size: 16px;
+  }
+  .grandient__socials {
+    max-width: 100%;
+  }
+
+  .data__links {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "link__curriculum"
+      "grandient1"
+      "link__github"
+      "grandient2"
+      "link__contact"
+      "grandient3";
+    row-gap: 5px;
+  }
+
+  .link__curriculum {
+    grid-area: link__curriculum;
+  }
+
+  .link__github {
+    grid-area: link__github;
+    margin-top: 23px;
+  }
+
+  .link__contact {
+    grid-area: link__contact;
+    margin-top: 23px;
+  }
+
+  .grandient1 {
+    grid-area: grandient1;
+  }
+
+  .grandient2 {
+    grid-area: grandient2;
+  }
+
+  .grandient3 {
+    grid-area: grandient3;
+  }
+
+  .links__socials {
+    display: contents;
+    flex-direction: column;
+  }
+
+  .grandient__socials {
+    display: contents;
+    margin-top: 0px;
+  }
+
+  .content {
+    margin-top: 80px;
+  }
+
+  .content__title {
+    font-size: 28px;
+    line-height: 1.08;
+  }
+
+  .logo__tools {
+    width: 30px;
+    height: 30px;
+  }
+
+  .logo__big {
+    width: 30px;
+    height: 34.2px;
+  }
+
+  .tools__menu {
+    gap: 53px;
+  }
+
+  .highlight__projects {
+    margin-top: 60px;
+  }
+
+  .project__picture {
+    max-width: 100%;
+    aspect-ratio: 280 / 160;
+  }
+
+  .project__containers {
+    gap: 10px;
+  }
+
+  .project__text-area {
+    padding: 20px 20px 20px 20px;
+    /* min-height: 340px; */
+    line-height: 1.4;
+    gap: 10px;
+    background-color: #1c1c1c;
+  }
+
+  .project__name {
+    font-size: 20px;
+  }
+
+  .project__description {
+    font-size: 16px;
+    line-height: 1.38;
+  }
+
+  .footer {
+    margin-top: 60px;
+  }
+
+  .contacting {
+    margin: 0px 32px 0;
+    padding-bottom: 200px;
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    width: 320px;
+    height: 320px;
+
+    top: 10%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+      circle at center,
+      rgba(91, 75, 255, 0.15) 0%,
+      rgba(91, 75, 255, 0.15) 45%,
+      transparent 75%
+    );
+
+    filter: blur(24px);
+
+    pointer-events: none;
+  }
+
+  .contacting::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    width: 300px;
+    height: 300px;
+
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+      ellipse at center,
+      rgba(91, 75, 255, 0.3) 0%,
+      rgba(91, 75, 255, 0.15) 45%,
+      transparent 75%
+    );
+
+    filter: blur(40px);
+    pointer-events: none;
+  }
 }
