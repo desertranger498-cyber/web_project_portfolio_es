@@ -254,11 +254,14 @@ body {
   width: 132px;
 }
 
+.project__links {
+  margin-top: auto;
+}
+
 .project__links-description {
   display: flex;
   flex-direction: row;
   gap: 20px;
-  margin-top: auto;
 }
 
 /* end of content user projects */
