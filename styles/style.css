@@ -1,16 +1,28 @@
 body,
 ul,
+li,
 h1,
 h2,
+h3,
+h4,
+h5,
+h6,
 label,
 input,
 button,
 footer,
 div,
-p {
+section,
+p,
+span {
   margin: 0;
   padding: 0;
   font-size: 1em;
+  text-indent: 0;
+}
+
+span {
+  display: block;
 }
 
 a,
@@ -61,6 +73,7 @@ body {
   font-style: normal;
   font-size: 18px;
   width: calc(100% - 240px);
+  max-width: 1200px;
   margin: 40px auto 0px;
   position: relative;
   overflow-x: clip;
@@ -86,8 +99,9 @@ body {
 .data__name {
   margin-top: 49px;
   grid-area: data__name;
-  font-family: "ArchivoBlack";
+  font-family: "ArchivoBlack", Arial, sans-serif;
   font-size: 72px;
+  align-content: end;
 }
 
 .data__picture__image {
@@ -99,7 +113,7 @@ body {
 }
 
 .data__tools {
-  font-family: "OpenSans";
+  font-family: "OpenSans", Arial, sans-serif;
   grid-area: data__tools;
   margin-top: 15px;
   align-content: center;
@@ -110,15 +124,16 @@ body {
 .data__text {
   grid-area: data__text;
   margin-top: 30px;
-  font-family: "OpenSans";
+  font-family: "OpenSans", Arial, sans-serif;
   line-height: 1.4;
+  align-content: end;
 }
 
 .data__links {
   display: flex;
   flex-direction: column;
   grid-area: data__links;
-  font-family: "OpenSans";
+  font-family: "OpenSans", Arial, sans-serif;
   font-weight: 600;
   margin-top: auto;
   margin-bottom: 10px;
@@ -127,6 +142,14 @@ body {
 .links__socials {
   display: flex;
   column-gap: 30px;
+  margin-top: 26px;
+}
+
+.links__socials a:hover,
+.project__links a:hover,
+.tripleten__link:hover,
+.social__media-displayer a:hover {
+  opacity: 0.6;
 }
 
 .grandient__bar {
@@ -164,7 +187,7 @@ body {
 .content,
 .footer {
   margin-top: 100px;
-  font-family: "ArchivoBlack";
+  font-family: "ArchivoBlack", Arial, sans-serif;
   font-size: 40px;
 }
 
@@ -176,7 +199,6 @@ body {
 .tools__menu {
   margin-top: 50px;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
@@ -185,7 +207,7 @@ body {
   height: 50px;
 }
 
-.highlight__projects {
+.project__highlights {
   margin-top: 100px;
   height: auto;
   width: 100%;
@@ -197,7 +219,7 @@ body {
   flex-direction: row;
   column-gap: 20px;
   flex-wrap: wrap;
-  font-family: OpenSans;
+  font-family: OpenSans, Arial, sans-serif;
   line-height: 1;
   justify-content: center;
   width: 100%;
@@ -205,7 +227,12 @@ body {
 
 .project__coffeeshop {
   max-width: 590px;
-  min-width: 0;
+  min-width: 0px;
+}
+
+.project__javascript {
+  max-width: 590px;
+  min-width: 0px;
 }
 
 .project__picture {
@@ -256,12 +283,13 @@ body {
 
 .project__links {
   margin-top: auto;
-}
-
-.project__links-description {
   display: flex;
   flex-direction: row;
   gap: 20px;
+}
+
+.project__links-margin {
+  margin-top: 10px;
 }
 
 /* end of content user projects */
@@ -280,7 +308,7 @@ body {
 }
 
 .tripleten__link {
-  font-family: "OpenSans";
+  font-family: "OpenSans", Arial, sans-serif;
   font-size: 18px;
   color: #6d6dff;
 }
@@ -361,6 +389,9 @@ body::before {
 
   .tools__menu {
     flex-wrap: wrap;
+    margin-top: 40px;
+    gap: 78px;
+    justify-content: flex-start;
   }
 
   .data__tools {
@@ -386,21 +417,15 @@ body::before {
     margin-bottom: 0px;
   }
 
+  .links__socials {
+    margin-top: 0px;
+  }
+
   .grandient__socials {
     margin-top: 8px;
   }
 
-  .content {
-    margin-top: 70px;
-  }
-
-  .tools__menu {
-    margin-top: 40px;
-    gap: 78px;
-    justify-content: flex-start;
-  }
-
-  .highlight__projects {
+  .project__highlights {
     margin-top: 80px;
   }
 
@@ -416,6 +441,7 @@ body::before {
 
   .project__coffeeshop {
     max-width: 688px;
+    min-width: 0px;
   }
 
   .project__javascript {
@@ -427,7 +453,7 @@ body::before {
     line-height: 1.4;
   }
 
-  .project__links-description {
+  .project__links {
     margin-top: 10px;
   }
 
@@ -445,7 +471,7 @@ body::before {
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 767px) {
   body {
     width: calc(100% - 40px);
     margin-top: 20px;
@@ -464,19 +490,15 @@ body::before {
   }
 
   .tools__menu {
-    margin-top: 36px;
+    margin-top: 30px;
     gap: 53px;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .data__name-text {
-    font-size: 36px;
-    line-height: 1.09;
+    row-gap: 30px;
   }
 
   .data__name {
     margin-top: 30px;
+    font-size: 36px;
+    line-height: 1.09;
   }
 
   .data__tools {
@@ -488,17 +510,6 @@ body::before {
 
   .data__links {
     margin-top: 33px;
-  }
-
-  .data__text {
-    line-height: 1.38;
-    font-size: 16px;
-  }
-  .grandient__socials {
-    max-width: 100%;
-  }
-
-  .data__links {
     display: grid;
     grid-template-columns: 100%;
     grid-template-areas:
@@ -508,7 +519,17 @@ body::before {
       "grandient2"
       "link__contact"
       "grandient3";
-    row-gap: 5px;
+    row-gap: 8px;
+  }
+
+  .data__text {
+    line-height: 1.38;
+    font-size: 16px;
+  }
+  .grandient__socials {
+    max-width: 100%;
+    display: contents;
+    margin-top: 0px;
   }
 
   .link__curriculum {
@@ -538,17 +559,13 @@ body::before {
   }
 
   .links__socials {
+    margin-top: 0px;
     display: contents;
     flex-direction: column;
   }
 
-  .grandient__socials {
-    display: contents;
-    margin-top: 0px;
-  }
-
   .content {
-    margin-top: 80px;
+    margin-top: 60px;
   }
 
   .content__title {
@@ -565,12 +582,7 @@ body::before {
     width: 30px;
     height: 34.2px;
   }
-
-  .tools__menu {
-    gap: 53px;
-  }
-
-  .highlight__projects {
+  .project__highlights {
     margin-top: 60px;
   }
 
@@ -588,7 +600,6 @@ body::before {
     /* min-height: 340px; */
     line-height: 1.4;
     gap: 10px;
-    background-color: #1c1c1c;
   }
 
   .project__name {
@@ -607,6 +618,12 @@ body::before {
   .contacting {
     margin: 0px auto 0;
     padding-bottom: 200px;
+  }
+
+  .social__media-displayer {
+    justify-content: center;
+    height: 24px;
+    gap: 40px;
   }
 
   body::before {
