@@ -225,6 +225,34 @@ body {
   width: 100%;
 }
 
+.project__coffeeshop {
+  max-width: 590px;
+  min-width: 0px;
+}
+
+.project__javascript {
+  max-width: 590px;
+  min-width: 0px;
+}
+
+.tech__logo-size {
+  width: 40px;
+  height: 40px;
+}
+
+.logo__html-margin {
+  margin-left: 2px;
+}
+
+.tech__logo-displayer {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  z-index: 1;
+}
+
 .dark__effect {
   position: relative;
   overflow: hidden;
@@ -245,16 +273,6 @@ body {
   );
 
   pointer-events: none;
-}
-
-.project__coffeeshop {
-  max-width: 590px;
-  min-width: 0px;
-}
-
-.project__javascript {
-  max-width: 590px;
-  min-width: 0px;
 }
 
 .project__picture {
